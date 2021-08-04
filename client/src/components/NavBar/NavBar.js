@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./NavBar.css";
+import "./NavBar.scss";
 import {
   Collapse,
   Navbar,
@@ -63,7 +63,7 @@ function NavBar(props) {
         expand="md"
       >
         <NavbarBrand className="navBrand" href="/">
-          <img src="./assets/logo-black-icon.svg" width="15%" alt="" />
+          <img id="fishfingerLogoImg" src="./assets/logo-black-icon.svg" width="15%" alt="" />
           <span id='fishfingerLogo' style={{ fontSize: "4vh" }}>fishfinger</span>
         </NavbarBrand>
         <div>
@@ -72,7 +72,9 @@ function NavBar(props) {
               &times;
             </a> */}
             <div id="contentOverlay" className="overlay-content">
-              <a href="#">About</a>
+              <a href="#">About
+              {/* <img width='5%' src="./assets/wave-gif-repet.gif" alt=''/><img width='5%' src="./assets/wave-gif-repet.gif" alt=''/> */}
+              </a>
               <a href="#">Services</a>
               <a href="#">Clients</a>
               <a href="#">Contact</a>

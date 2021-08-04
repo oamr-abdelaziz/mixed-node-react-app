@@ -11,7 +11,7 @@
 #videoContainer video{
     position: fixed;
     top: -23%;   
-    z-index: -1;
+    z-index: -2;
 }
 #vidTxt{
     height: 58%;
@@ -27,13 +27,18 @@
 
 
 #vidTxt a{
-    z-index: -1;
+    z-index: 1;
     background-color: transparent;
     border: none;
     color: white;
     position: relative;
     animation: example 1.5s ease-in-out 0s infinite alternate;
 
+}
+
+#scrollto{
+    position: absolute;
+    top:100%;
 }
 @keyframes example {
     0%   {top:-10px;}
@@ -54,7 +59,7 @@
 
   .orangeBack{
       background-color: rgb(255, 153, 0);
-      z-index: 1;
+      z-index: 3;
       transition: all 0.4s ease-in-out 0s;
   }
 
@@ -91,7 +96,45 @@
       padding-right: 20px;
       font-size: 16px;
       font-weight: 600;
+      -webkit-transition: all 0.4s;
+      -moz-transition: all 0.4s;
+      transition: all 0.4s;
+     
+    z-index: 2;
+      
   }
+
+  
+  .secondPage button{
+    overflow: hidden;
+    position: relative;
+  }
+  .secondPage button:hover{
+    color: rgb(255, 153, 0);
+  }
+  
+  
+  .secondPage button:after {
+    content: '';
+    position: absolute;
+    // z-index: -1;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    z-index:-1;
+
+  }
+  
+  .secondPage button:hover:after,
+  .secondPage button:active:after {
+    height: 100%;
+  }
+  
 
   .displayTxt{
     opacity: 1;

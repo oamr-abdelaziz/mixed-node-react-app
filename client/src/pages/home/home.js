@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Col, Container, Jumbotron, Row } from "reactstrap";
-import "./home.css";
+import "./home.scss";
 function Home(props) {
   const [state, setState] = useState("");
   window.onscroll = function () {
@@ -21,6 +21,13 @@ function Home(props) {
 
     }
   };
+
+  const scrollDown=()=>{
+    window.scrollTo({
+      top: 620,
+      behavior: 'smooth'
+    });
+  }
   useEffect(() => {
     return () => {};
   }, []);
@@ -61,11 +68,11 @@ function Home(props) {
             We turn regular fish into
             <span className="boldTxt">MAGICANS</span>
           </h1>
-          <a href="/">
-            <i class="fas fa-sort-down"></i>
+          <a onClick={scrollDown}>
+            <i style={{cursor:"pointer"}} className="fas fa-sort-down"></i>
           </a>
         </div>
-
+        {/* <div  ></div> */}
         <Jumbotron className="secondPage">
           <div className="secondTxt">
             <div>
@@ -124,8 +131,8 @@ function Home(props) {
           </Container>
           <br />
           <br />
-
-          <button>FIND OUT MORE</button>
+        
+            <button>FIND OUT MORE</button>
         </Jumbotron>
       </container>
     </>
