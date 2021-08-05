@@ -1,0 +1,21 @@
+.loader{
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: opacity 0.3s;
+    img{
+        width: 20%;
+        animation: loader 3s linear 0s infinite;
+    }
+}
+
+.loader--hide {
+    opacity: 0;
+  }
+
+@keyframes loader {
+    0% {transform: rotate(0deg)} 
+    100% {transform: rotate(360deg)}
+}
