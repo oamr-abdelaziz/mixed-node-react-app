@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Col, Container, Jumbotron, Row } from "reactstrap";
+import Footer from "../../components/Footer/Footer";
 import "./home.scss";
 function Home(props) {
   const [state, setState] = useState("");
@@ -135,6 +136,8 @@ function Home(props) {
             <button>FIND OUT MORE</button>
         </Jumbotron>
       </container>
+      <Footer />
+    
     </>
   );
 }

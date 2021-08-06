@@ -3,6 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import Spinner from "./components/Spinner/Spinner";
 
 const Home = React.lazy(() => import("./pages/home/home"));
+const About = React.lazy(() => import("./pages/about/about"));
+
 // const About = React.lazy(() => import("./pages/About/About"));
 // const Contact = React.lazy(() => import("./pages/Contact/Contact"));
 
@@ -18,7 +20,7 @@ export default function Routes() {
       <Switch>
         {/* Main Routes*/}
         <Route path="/" exact component={Home} />
-
+        <Route path="/about" exact component={About}/>
         {/* <Route path="/portofolio" exact component={Portofolio}/>
         <Route path="/about" exact component={About}/>
         <Route path="/contact" exact component={Contact}/> */}

@@ -72,7 +72,7 @@ function NavBar(props) {
               &times;
             </a> */}
             <div id="contentOverlay" className="overlay-content">
-              <a href="#">About
+              <a href="/about">About
               {/* <img width='5%' src="./assets/wave-gif-repet.gif" alt=''/><img width='5%' src="./assets/wave-gif-repet.gif" alt=''/> */}
               </a>
               <a href="#">Services</a>
