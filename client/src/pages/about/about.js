@@ -3,40 +3,92 @@ import Employee from "../../components/Employee/Employee";
 import "./about.scss";
 
 function About(props) {
-  const [state, setState] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
+    // document.getElementById('About').onscroll = ()=>{scrollDown(2);}
+  
     return () => {};
   }, []);
 
-  const scrollDown = (number) => {
-    // window.scrollTo({
-    //   top:  620,
-    //   behavior: 'smooth'
-    // });
-    var elem = document.getElementById(`page${number}`);
-    elem.scrollIntoView({ behavior: "smooth" });
-  };
+  const scrollDown = () => {
+      if(currentPage<8){
+        let currPage = document.getElementById(`page${currentPage}`);
+        let lftPage = document.getElementById(`leftPage${currentPage}`);
+        let rightPage = document.getElementById(`rightPage${currentPage}`);
+
+        lftPage.classList.toggle('fastfixedDown');
+        rightPage.classList.toggle('slowfixedDown');
+        currPage.classList.toggle('fixedDown')
+
+        setCurrentPage(currentPage+1);
+      }
+};
+
+const scrollUp = () => {
+    if(currentPage>1){
+    let currPage = document.getElementById(`page${currentPage-1}`);
+    let lftPage = document.getElementById(`leftPage${currentPage-1}`);
+    let rightPage = document.getElementById(`rightPage${currentPage-1}`);
+
+    lftPage.classList.toggle('fastfixedDown');
+    rightPage.classList.toggle('slowfixedDown');
+    currPage.classList.toggle('fixedDown');
+    
+   
+    setCurrentPage(currentPage-1);
+    }
+};
+
+
+
+window.onwheel = function(event) {
+//    return window.onwheel = function(){ return false; }
+    if(!scrolling){
+    setScrolling(true);    
+
+    if (event.deltaY > 0) {
+      // down
+      scrollDown()
+    } else {
+      // up
+     scrollUp()
+    }
+    setTimeout(()=>{setScrolling(false);},1500)     
+
+}
+    
+    // return false;
+  }
+//   window.onscrolldown = ()=>{
+//   window.onscrollup = ()=>{
+
+//     //   scrollDown(7);
+//     document.getElementById('page2').style.top='700';    
+// } 
   return (
     <>
-      <div className="about">
-        <div className="about-page">
-          <div className="about-image-div">
+      <div id='About' className="about">
+        <div id="page1" className="about-page">
+          <div id="leftPage1" className="leftPage about-image-div">
             <img
               width="70%"
               src="./assets/meet-the-team.png"
               alt="The Fishfinger Team"
             />
           </div>
-          <div className="about-text-div">
+          <div id='rightPage1' className=" rightPage about-text-div">
             <h1>Who's FishFinger?</h1>
-            <button onClick={()=>{scrollDown(2)}}>Discover More</button>
+            <button  className='button' onClick={scrollDown}>Discover More</button>
           </div>
         </div>
         <div id="page2" className="about-page">
           <div
             style={{ backgroundColor: "#004A92" }}
-            className="about-image-div"
+            className="leftPage about-image-div"
+            id="leftPage2"
+
           >
             <img
               width="70%"
@@ -45,12 +97,15 @@ function About(props) {
             />
           </div>
           <div
+          id='rightPage2'
             style={{ backgroundColor: "#01519B" }}
-            className="about-text-div"
+            className="rightPage about-text-div"
           >
-            <div style={{ width: "80%" }}>
-              <h1>We’re Fishfinger!</h1>
-              <h3>A creative agency like no other.</h3>
+            <div style={{ width: "73%" }}>
+                <div className='secondPageHeading'>
+                    <h1>We’re Fishfinger!</h1>
+                    <h3>A creative agency like no other.</h3>
+                </div>
               <p>
                 We're a team of creatives that love nothing more than creating
                 incredible stories. We specialise in branding, animation and web
@@ -62,11 +117,12 @@ function About(props) {
                 The Fishfingers are always ready to create something
                 unforgettable.
               </p>
-              <button onClick={()=>{scrollDown(3)}}>Meet the team</button>
+              <button class='about-button' onClick={scrollDown}>Meet the team<br/><i className="fas fa-sort-down"></i></button>
             </div>
           </div>
         </div>
         <Employee
+
           img="le-chef-fallback.gif"
           imgright={true}
           imgleft={false}
@@ -78,9 +134,10 @@ function About(props) {
           title1desc="Winning the Tour De France"
           title2="Likes:"
           title2desc="Fishing, cycling & food hygiene"
-          descripton="Our beloved CEO, head chef and former Tour de France winner, Monsieur Le Chef, has finely crafted a collection of the most supremely talented Fishfingers since records began. They bring exceptional creativity, endless enthusiasm and pinpoint focus to every project they undertake."
+          description="Our beloved CEO, head chef and former Tour de France winner, Monsieur Le Chef, has finely crafted a collection of the most supremely talented Fishfingers since records began. They bring exceptional creativity, endless enthusiasm and pinpoint focus to every project they undertake."
           pageNumber="3"
           scroll={scrollDown}
+          nextEmployee='Dave'
         />
 
 <Employee
@@ -95,26 +152,30 @@ function About(props) {
           title1desc="Donald Duck's stunt double"
           title2="Favourite Pastime:"
           title2desc="Moonlight waddles on the beach"
-          descripton="Monsieur Le Chef's best and only friend. Never seen without his cap, Dave is our chief blogger. Rumours of what's hidden under his headpiece are plentiful... a comb-over, Tupac Shakur or merely a passion for writing content..."
+          description="Monsieur Le Chef's best and only friend. Never seen without his cap, Dave is our chief blogger. Rumours of what's hidden under his headpiece are plentiful... a comb-over, Tupac Shakur or merely a passion for writing content..."
           pageNumber="4"
           scroll={scrollDown}
+          nextEmployee='Andy'
+
         />
 
 <Employee
           img="andy-fallback.gif"
           imgright={true}
           imgleft={false}
-          backgroundColorTxt="#008AD8"
-          backgroundColorImg="#0290DA"
+          backgroundColorTxt="#0DB973"
+          backgroundColorImg="#3CB778"
           name="Andy Warsole"
           position="Creative Director"
           title1="Greatest Achievement:"
           title1desc="25m swimming badge"
           title2="Dislikes:"
           title2desc="Moonlight waddles on the beach"
-          descripton="Bullied at school because of the silent 'W' on his surname, Andy turned to art and graphic design. An award-winning creative genius, he will create a design masterpiece from anything."
+          description="Bullied at school because of the silent 'W' on his surname, Andy turned to art and graphic design. An award-winning creative genius, he will create a design masterpiece from anything."
           pageNumber="5"
           scroll={scrollDown}
+          nextEmployee='Wendy'
+
         />
 
 <Employee
@@ -129,9 +190,11 @@ function About(props) {
           title1desc="Solving the Da Vinci Code"
           title2="Favourite Quote:"
           title2desc="Give me a <br>"
-          descripton="Graduating with a C++ at code school, W.W.W takes charge of turning our Fishfingers' dreams into digital reality. Wendy has never left her desk and furiously bashes on her keyboard day and night developing websites endlessly."
+          description="Graduating with a C++ at code school, W.W.W takes charge of turning our Fishfingers' dreams into digital reality. Wendy has never left her desk and furiously bashes on her keyboard day and night developing websites endlessly."
           pageNumber="6"
           scroll={scrollDown}
+          nextEmployee='Cod'
+
         />
 
 <Employee
@@ -146,11 +209,23 @@ function About(props) {
           title1desc="Solving the Da Vinci Code"
           title2="Favourite Operetta:"
           title2desc="The Pirates of Penzance"
-          descripton="Cod may only have one eye, but that's what makes him the best 2D animator across the Seven Seas. When depth perception is required, his trusty bi-focal bird is always happy to cast an eye."
+          description="Cod may only have one eye, but that's what makes him the best 2D animator across the Seven Seas. When depth perception is required, his trusty bi-focal bird is always happy to cast an eye."
           pageNumber="7"
           scroll={scrollDown}
         />
-        <div id='page8'></div>
+        <div id="page8" className="about-page">
+          <div id="leftPage8" className="leftPage about-image-div">
+            <img
+              width="70%"
+              src="./assets/see-what-we-do-static.png"
+              alt="The Fishfinger Team"
+            />
+          </div>
+          <div id='rightPage8' className=" rightPage about-text-div">
+            <h1>See Our Work!</h1>
+            <button  className='button'>Discover More</button>
+          </div>
+        </div>
 
       </div>
     </>

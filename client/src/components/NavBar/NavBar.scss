@@ -9,14 +9,14 @@
 .navbar{
     justify-content: space-between !important;
     padding:20px;
-    z-index: 4;
+    z-index: 999;
 
 }
 
 .overlay {
     height: 0%;
     position: fixed;
-    z-index: 4;
+    z-index: 999;
     top: 0;
     right: 0;
     border-radius: 100%;
@@ -137,7 +137,7 @@
     height: 40px;
     right: 10px;
     top: 10px;
-    z-index: 4;
+    z-index: 999;
   }
 
 
@@ -192,7 +192,7 @@
   }
 
   #fishfingerLogoImg{
-    z-index: 5;
+    z-index: 1000;
   }
   #fishfingerLogo{
     transition: transform 500ms ease-in-out 0s;

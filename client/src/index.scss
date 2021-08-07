@@ -43,3 +43,24 @@ body {
   font-family: 'TT-Norm-light';
   src: local('TT-Norm'), url(./fonts/TTNorms/TTNorms-Light.otf) format('truetype');
 }
+
+
+@font-face {
+  font-family: 'TT-Norm-Extralight';
+  src: local('TT-Norm'), url(./fonts/TTNorms/TTNorms-ExtraLight.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'TT-Norm-ExtralightItalic';
+  src: local('TT-Norm'), url(./fonts/TTNorms/TTNorms-ExtraLightItalic.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'TT-Norm-mediumItalic';
+  src: local('TT-Norm'), url(./fonts/TTNorms/TTNorms-MediumItalic.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'TT-Norm-Italic';
+  src: local('TT-Norm'), url(./fonts/TTNorms/TTNorms-Italic.otf) format('truetype');
+}

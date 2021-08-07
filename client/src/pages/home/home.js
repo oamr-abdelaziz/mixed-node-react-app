@@ -133,7 +133,7 @@ function Home(props) {
           <br />
           <br />
         
-            <button>FIND OUT MORE</button>
+            <button className='button'>FIND OUT MORE</button>
         </Jumbotron>
       </container>
       <Footer />

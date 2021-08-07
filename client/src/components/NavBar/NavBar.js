@@ -67,7 +67,7 @@ function NavBar(props) {
           <span id='fishfingerLogo' style={{ fontSize: "4vh" }}>fishfinger</span>
         </NavbarBrand>
         <div>
-          <div id="myNav" class="overlay">
+          <div id="myNav" className="overlay">
             {/* <a href="javascript:void(0)" class="closebtn" onClick={closeNav}>
               &times;
             </a> */}
@@ -82,7 +82,7 @@ function NavBar(props) {
           </div>
           <a href='#' className='nav__trigger' onClick={toggle}>
             <span
-            style={{ "font-size": "30px", cursor: "pointer", color: "white",zIndex:"2" }}
+            style={{ "fontSize": "30px", cursor: "pointer", color: "white",zIndex:"2" }}
             className='nav__icon'
           >
             {/* &#9776; */}
