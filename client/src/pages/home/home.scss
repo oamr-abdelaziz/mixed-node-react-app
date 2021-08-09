@@ -1,11 +1,11 @@
 #videoContainer{
     height: 200%;
+    width:100%;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     font-family: TT-Norm-Bold, serif;
-
 }
 
 #videoContainer video{
@@ -14,13 +14,14 @@
     z-index: -2;
 }
 #vidTxt{
-    height: 58%;
+    height: 55%;
 }
 #vidTxt, #vidTxt h1{
     display: flex;
     flex-flow:column wrap ;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: white;
     font-size: 52px;
 }
@@ -55,6 +56,7 @@
   }
   .boldTxt{
     font-size: 72px;
+
      font-family: TT-Norm-Bold, serif;
      font-weight: 700;
   }
@@ -66,11 +68,12 @@
   }
 
   .secondPage{
-      height:42%;
+      height:45%;
       width:60%;
       display: flex;
-      flex-flow:column wrap;
+      flex-flow:row wrap;
       align-items: center;
+      justify-content: center;
       opacity: 0;
       text-align: center;
       color: white;
@@ -85,13 +88,50 @@
       width: 80%;
   }
 
-  .col-1 img{
-      width: 6em;
-  }
+  // .col-1 img{
+  //     width: 6em;
+  // }
 
 
 
   .displayTxt{
     opacity: 1;
     transition: opacity 0.5s ease-in-out 0s;
+  }
+
+ [class*="col-"]{
+    // box-sizing: border-box;
+
+    padding:1em;
+    // margin:1em;
+  }
+
+  @media screen and (max-width: 700px) {
+    .space {
+      display: none;
+    }
+
+    .secondTxt{
+      width:100%;
+    }
+
+    .secondPage{
+      width:80%;
+
+    }
+
+    #videoContainer video{
+      top: 0;   
+      height: 100%;
+      // width:100%;
+      // transform: scale(0.9);
+  }
+
+  #vidTxt h1{
+    font-size: 26px;
+  }
+  .boldTxt{
+    font-size: 36px;
+
+  }
   }

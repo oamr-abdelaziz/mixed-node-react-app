@@ -121,8 +121,17 @@
     font-size: 60px;
   }
    */
-  @media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
+  @media screen and (max-height: 600px) {
+    .overlay a {font-size: 40px}
+    .navBrand {
+      position: relative;
+    left:10%;
+    img{
+    
+      width:50%;
+      margin-right: 5px;
+    }
+  }
     /* .overlay .closebtn {
     font-size: 40px;
     top: 15px;
@@ -198,7 +207,7 @@
     transition: transform 500ms ease-in-out 0s;
     }
   .moveLogo{
-    transform: translateY(-65px);
+    transform: translateY(-100px);
   }
   /* #contentOverlay{
     overflow-y: hidden;
