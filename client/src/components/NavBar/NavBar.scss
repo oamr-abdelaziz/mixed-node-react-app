@@ -121,12 +121,12 @@
     font-size: 60px;
   }
    */
-  @media screen and (max-height: 600px) {
+  @media screen and (max-width: 600px) {
     .overlay a {font-size: 40px}
     .navBrand {
       position: relative;
-    left:10%;
-    img{
+      left:10%;
+      img{
     
       width:50%;
       margin-right: 5px;
