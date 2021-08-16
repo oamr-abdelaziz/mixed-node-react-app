@@ -1,4 +1,13 @@
 .employee{
+    // width: 50%;
+    height: 100%;
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+.innerEmployee{
 
         height:70%;
         width:75%;
@@ -28,4 +37,29 @@
             
         }
 
+       
+
 }
+
+.mobileSizeImage{
+    display:none;
+}
+
+
+@media screen and (max-width: 700px) {
+    .mobileSizeImage{
+        display:block;
+    }
+
+    .displayNoneAtMobile{
+        display:none;
+
+    }
+
+    // .about-image-div{
+    //     display:none;
+    // }
+
+
+}
+

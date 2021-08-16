@@ -79,8 +79,14 @@ window.onwheel = function(event) {
             />
           </div>
           <div id='rightPage1' className=" rightPage about-text-div">
-            <h1>Who's FishFinger?</h1>
-            <button  className='button' onClick={scrollDown}>Discover More</button>
+          <div className='mobileSizeImage'>
+                      <img width="50%"  src="./assets/meet-the-team.png" alt="The Fishfinger Team"/>
+
+          </div>
+          <div className='innerFirstAboutPage'>
+              <h1>Who's FishFinger?</h1>
+              <button  className='button' onClick={scrollDown}>Discover More</button>
+          </div>
           </div>
         </div>
         <div id="page2" className="about-page">
@@ -101,7 +107,11 @@ window.onwheel = function(event) {
             style={{ backgroundColor: "#01519B" }}
             className="rightPage about-text-div"
           >
-            <div style={{ width: "73%" }}>
+            <div className='mobileSizeImage'>
+                 <img width="55%"  src="./assets/meet-the-team-fallback.gif" alt="The Fishfinger Team"/>
+
+            </div>
+            <div className='innerSecondAboutPage' >
                 <div className='secondPageHeading'>
                     <h1>We’re Fishfinger!</h1>
                     <h3>A creative agency like no other.</h3>
@@ -117,7 +127,7 @@ window.onwheel = function(event) {
                 The Fishfingers are always ready to create something
                 unforgettable.
               </p>
-              <button class='about-button' onClick={scrollDown}>Meet the team<br/><i className="fas fa-sort-down"></i></button>
+              <button class='about-button' onClick={scrollDown}><span  className='displayNoneAtMobile'>Meet the team</span><br/><i className="fas fa-sort-down"></i></button>
             </div>
           </div>
         </div>
@@ -222,8 +232,13 @@ window.onwheel = function(event) {
             />
           </div>
           <div id='rightPage8' className=" rightPage about-text-div">
-            <h1>See Our Work!</h1>
-            <button  className='button'>Discover More</button>
+            <div className='mobileSizeImage'>
+                <img width="50%"  src="./assets/see-what-we-do-static.png" alt="The Fishfinger Team"/>
+            </div>
+            <div className='innerFirstAboutPage'>
+              <h1>See Our Work!</h1>
+              <button  className='button'>Discover More</button>
+            </div>
           </div>
         </div>
 
