@@ -70,11 +70,11 @@ function handleGesure() {
     if(!scrolling){
       setScrolling(true);  
     if (touchendY < touchstartY) {
-      scrollDown()
+      scrollUp()
 
     }
     if (touchendY > touchstartY) {
-      scrollUp()
+      scrollDown()
     }
     setTimeout(()=>{setScrolling(false);},1500)     
 
