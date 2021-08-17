@@ -47,14 +47,14 @@ let touchstartY = 0;
 // let touchendX = 0;
 let touchendY = 0;
 
-let gesuredZone = document.getElementById('About');
+// let gesuredZone = document.getElementById('About');
 
-gesuredZone.addEventListener('touchstart', function(event) {
+window.addEventListener('touchstart', function(event) {
     // touchstartX = event.changedTouches[0].screenX;
     touchstartY = event.changedTouches[0].screenY;
 }, false);
 
-gesuredZone.addEventListener('touchend', function(event) {
+window.addEventListener('touchend', function(event) {
     // touchendX = event.changedTouches[0].screenX;
     touchendY = event.changedTouches[0].screenY;
     handleGesure();
