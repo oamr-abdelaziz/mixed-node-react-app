@@ -42,6 +42,45 @@ const scrollUp = () => {
 };
 
 
+// let touchstartX = 0;
+let touchstartY = 0;
+// let touchendX = 0;
+let touchendY = 0;
+
+let gesuredZone = document.getElementById('About');
+
+gesuredZone.addEventListener('touchstart', function(event) {
+    // touchstartX = event.changedTouches[0].screenX;
+    touchstartY = event.changedTouches[0].screenY;
+}, false);
+
+gesuredZone.addEventListener('touchend', function(event) {
+    // touchendX = event.changedTouches[0].screenX;
+    touchendY = event.changedTouches[0].screenY;
+    handleGesure();
+}, false); 
+
+function handleGesure() {
+    // if (touchendX < touchstartX) {
+    //     alert(swiped + 'left!');
+    // }
+    // if (touchendX > touchstartX) {
+    //     alert(swiped + 'right!');
+    // }
+    if(!scrolling){
+      setScrolling(true);  
+    if (touchendY < touchstartY) {
+      scrollDown()
+
+    }
+    if (touchendY > touchstartY) {
+      scrollUp()
+    }
+    setTimeout(()=>{setScrolling(false);},1500)     
+
+  }
+}
+
 
 window.onwheel = function(event) {
 //    return window.onwheel = function(){ return false; }
