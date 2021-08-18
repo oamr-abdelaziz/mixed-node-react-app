@@ -43,36 +43,24 @@ const scrollUp = () => {
 
 
 // let touchstartX = 0;
-// let touchstartY = 0;
-// // let touchendX = 0;
-// let touchendY = 0;
+let touchstartY = 0;
+// let touchendX = 0;
+let touchendY = 0;
 
 // let gesuredZone = document.getElementById('About');
 
-// window.addEventListener('touchstart', function(event) {
-//     // touchstartX = event.changedTouches[0].screenX;
-//     touchstartY = event.changedTouches[0].screenY;
-// }, false);
+window.addEventListener('touchstart', function(event) {
+    // touchstartX = event.changedTouches[0].screenX;
+    touchstartY = event.changedTouches[0].screenY;
+}, false);
 
-// window.addEventListener('touchend', function(event) {
-//     // touchendX = event.changedTouches[0].screenX;
-//     touchendY = event.changedTouches[0].screenY;
-//     handleGesure();
-// }, false); 
-let y1 =0;
-let y2=0;
-
-window.addEventListener('touchmove', function(event) {
+window.addEventListener('touchend', function(event) {
     // touchendX = event.changedTouches[0].screenX;
-    y1 = event.changedTouches[0].screenY;
-    setTimeout(() => {
-      y2 = event.changedTouches[0].screenY;
-      handleGesure();
-
-    }, 4); 
+    touchendY = event.changedTouches[0].screenY;
+    handleGesure(event);
 }, false); 
 
-function handleGesure() {
+function handleGesure(e) {
     // if (touchendX < touchstartX) {
     //     alert(swiped + 'left!');
     // }
@@ -81,15 +69,20 @@ function handleGesure() {
     // }
     if(!scrolling){
       setScrolling(true);  
-      console.log('y2', y2);
-      console.log('y1', y1);
+      console.log('touchendY', touchendY);
+      console.log('touchstartY', touchstartY);
 
-    if (y2 < y1) {
-      scrollDown()
+    if (touchendY > touchstartY) {
+      e.preventDefault();
+      scrollUp()
 
     }
-    if (y2 > y1) {
-      scrollUp()
+    else if (touchendY < touchstartY) {
+      e.preventDefault();
+      scrollDown()
+    }
+    else{
+      console.log('click event');
     }
     setTimeout(()=>{setScrolling(false);},1500)     
 
