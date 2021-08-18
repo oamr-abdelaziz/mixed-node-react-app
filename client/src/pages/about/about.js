@@ -5,6 +5,7 @@ import "./about.scss";
 function About(props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [scrolling, setScrolling] = useState(false);
+  const [buttonClickedFlag, setButtonClickedFlag] = useState(false);
 
   useEffect(() => {
     // document.getElementById('About').onscroll = ()=>{scrollDown(2);}
@@ -42,7 +43,50 @@ const scrollUp = () => {
 };
 
 
-// let touchstartX = 0;
+// let y1 =0;
+// let y2=0;
+
+// window.addEventListener('touchmove', function(event) {
+  
+//     // touchendX = event.changedTouches[0].screenX;
+//     y1 = event.changedTouches[0].screenY;
+//     setTimeout(() => {
+//       y2 = event.changedTouches[0].screenY;
+//       handleGesure(event);
+
+//     }, 4); 
+// }, false); 
+
+// function handleGesure(e) {
+//     // if (touchendX < touchstartX) {
+//     //     alert(swiped + 'left!');
+//     // }
+//     // if (touchendX > touchstartX) {
+//     //     alert(swiped + 'right!');
+//     // }
+//     if (e.target.tagName !== "button") {
+//       e.preventDefault(); 
+//       if(!scrolling){
+//         setScrolling(true);  
+//         console.log('y2', y2);
+//         console.log('y1', y1);
+  
+//       if (y2 < y1) {
+//         scrollDown()
+  
+//       }
+//       else if (y2 > y1) {
+//         scrollUp()
+//       }
+//       setTimeout(()=>{setScrolling(false);},1500)    
+//     } 
+//   }
+//   else {
+//     console.log("this makes me a click event, most likely")
+//   }
+// }
+
+let touchstartX = 0;
 let touchstartY = 0;
 // let touchendX = 0;
 let touchendY = 0;
@@ -51,13 +95,28 @@ let touchendY = 0;
 
 window.addEventListener('touchstart', function(event) {
     // touchstartX = event.changedTouches[0].screenX;
-    touchstartY = event.changedTouches[0].screenY;
+    if (event.target.tagName !== "button") {
+
+      touchstartY = event.changedTouches[0].screenY;
+    }
+    else{
+      setButtonClickedFlag(true);
+      // setTimeout(() => {
+      //   window.removeEventListener('touchend'); 
+      // }, 100);
+
+    }
 }, false);
 
 window.addEventListener('touchend', function(event) {
+  if(buttonClickedFlag){
+    setButtonClickedFlag(false);
+  }
+  else{
     // touchendX = event.changedTouches[0].screenX;
     touchendY = event.changedTouches[0].screenY;
     handleGesure(event);
+  }
 }, false); 
 
 function handleGesure(e) {
@@ -73,12 +132,12 @@ function handleGesure(e) {
       console.log('touchstartY', touchstartY);
 
     if (touchendY > touchstartY) {
-      e.preventDefault();
+      // e.preventDefault();
       scrollUp()
 
     }
     else if (touchendY < touchstartY) {
-      e.preventDefault();
+      // e.preventDefault();
       scrollDown()
     }
     else{
