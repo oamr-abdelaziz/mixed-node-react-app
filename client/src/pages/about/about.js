@@ -5,8 +5,9 @@ import "./about.scss";
 function About(props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [scrolling, setScrolling] = useState(false);
-  const [buttonClickedFlag, setButtonClickedFlag] = useState(false);
+  // const [buttonClickedFlag, setButtonClickedFlag] = useState(false);
 
+  let buttonClickedFlag = false;
   useEffect(() => {
     // document.getElementById('About').onscroll = ()=>{scrollDown(2);}
   
@@ -86,7 +87,7 @@ const scrollUp = () => {
 //   }
 // }
 
-let touchstartX = 0;
+// let touchstartX = 0;
 let touchstartY = 0;
 // let touchendX = 0;
 let touchendY = 0;
@@ -100,7 +101,8 @@ window.addEventListener('touchstart', function(event) {
       touchstartY = event.changedTouches[0].screenY;
     }
     else{
-      setButtonClickedFlag(true);
+      // setButtonClickedFlag(true);
+      buttonClickedFlag = true;
       // setTimeout(() => {
       //   window.removeEventListener('touchend'); 
       // }, 100);
@@ -110,7 +112,8 @@ window.addEventListener('touchstart', function(event) {
 
 window.addEventListener('touchend', function(event) {
   if(buttonClickedFlag){
-    setButtonClickedFlag(false);
+    // setButtonClickedFlag(false);
+    buttonClickedFlag = false;
   }
   else{
     // touchendX = event.changedTouches[0].screenX;
