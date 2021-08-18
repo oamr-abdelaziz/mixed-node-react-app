@@ -10,9 +10,45 @@ function About(props) {
   let buttonClickedFlag = false;
   useEffect(() => {
     // document.getElementById('About').onscroll = ()=>{scrollDown(2);}
+    window && window.addEventListener('touchstart', handleTouchStart, false);
   
-    return () => {};
-  }, []);
+    window && window.addEventListener('touchend',handleTouchEnd, false); 
+  
+  return () => {
+    window && window.removeEventListener('touchend')
+    window && window.removeEventListener('touchstart')
+  };
+}, [])
+
+
+
+const handleTouchStart =(event)=>{
+  if (event.target.tagName !== "BUTTON") {
+  
+    touchstartY = event.changedTouches[0].screenY;
+  }
+  else{
+    // setButtonClickedFlag(true);
+    buttonClickedFlag = true;
+    // setTimeout(() => {
+    //   window.removeEventListener('touchend'); 
+    // }, 100);
+
+  }
+}
+
+const handleTouchEnd =(event)=>{
+  if(buttonClickedFlag){
+    // setButtonClickedFlag(false);
+    buttonClickedFlag = false;
+  }
+  else{
+    // touchendX = event.changedTouches[0].screenX;
+    touchendY = event.changedTouches[0].screenY;
+    handleGesure(event);
+  }
+}
+
 
   const scrollDown = () => {
       if(currentPage<8){
@@ -94,33 +130,6 @@ let touchendY = 0;
 
 // let gesuredZone = document.getElementById('About');
 
-window.addEventListener('touchstart', function(event) {
-    // touchstartX = event.changedTouches[0].screenX;
-    if (event.target.tagName !== "BUTTON") {
-
-      touchstartY = event.changedTouches[0].screenY;
-    }
-    else{
-      // setButtonClickedFlag(true);
-      buttonClickedFlag = true;
-      // setTimeout(() => {
-      //   window.removeEventListener('touchend'); 
-      // }, 100);
-
-    }
-}, false);
-
-window.addEventListener('touchend', function(event) {
-  if(buttonClickedFlag){
-    // setButtonClickedFlag(false);
-    buttonClickedFlag = false;
-  }
-  else{
-    // touchendX = event.changedTouches[0].screenX;
-    touchendY = event.changedTouches[0].screenY;
-    handleGesure(event);
-  }
-}, false); 
 
 function handleGesure(e) {
     // if (touchendX < touchstartX) {
@@ -135,12 +144,12 @@ function handleGesure(e) {
       console.log('touchstartY', touchstartY);
 
     if (touchendY > touchstartY) {
-      // e.preventDefault();
+      e.preventDefault();
       scrollUp()
 
     }
     else if (touchendY < touchstartY) {
-      // e.preventDefault();
+      e.preventDefault();
       scrollDown()
     }
     else{
