@@ -95,7 +95,7 @@ let touchendY = 0;
 
 window.addEventListener('touchstart', function(event) {
     // touchstartX = event.changedTouches[0].screenX;
-    if (event.target.tagName !== "button") {
+    if (event.target.tagName !== "BUTTON") {
 
       touchstartY = event.changedTouches[0].screenY;
     }
