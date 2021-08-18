@@ -43,43 +43,46 @@ const scrollUp = () => {
 
 
 // let touchstartX = 0;
-let touchstartY = 0;
-// let touchendX = 0;
-let touchendY = 0;
+// let touchstartY = 0;
+// // let touchendX = 0;
+// let touchendY = 0;
 
-// let gesuredZone = document.getElementById('About');
+// // let gesuredZone = document.getElementById('About');
 
-window.addEventListener('touchstart', function(event) {
-    // touchstartX = event.changedTouches[0].screenX;
-    touchstartY = event.changedTouches[0].screenY;
-}, false);
+// window.addEventListener('touchstart', function(event) {
+//     // touchstartX = event.changedTouches[0].screenX;
+//     touchstartY = event.changedTouches[0].screenY;
+// }, false);
 
-window.addEventListener('touchend', function(event) {
-    // touchendX = event.changedTouches[0].screenX;
-    touchendY = event.changedTouches[0].screenY;
-    handleGesure();
-}, false); 
+// window.addEventListener('touchend', function(event) {
+//     // touchendX = event.changedTouches[0].screenX;
+//     touchendY = event.changedTouches[0].screenY;
+//     handleGesure();
+// }, false); 
 
-function handleGesure() {
-    // if (touchendX < touchstartX) {
-    //     alert(swiped + 'left!');
-    // }
-    // if (touchendX > touchstartX) {
-    //     alert(swiped + 'right!');
-    // }
-    if(!scrolling){
-      setScrolling(true);  
-    if (touchendY < touchstartY) {
-      scrollUp()
+// function handleGesure() {
+//     // if (touchendX < touchstartX) {
+//     //     alert(swiped + 'left!');
+//     // }
+//     // if (touchendX > touchstartX) {
+//     //     alert(swiped + 'right!');
+//     // }
+//     if(!scrolling){
+//       setScrolling(true);  
+//       console.log('touchendY', touchendY);
+//       console.log('touchstartY', touchstartY);
 
-    }
-    if (touchendY > touchstartY) {
-      scrollDown()
-    }
-    setTimeout(()=>{setScrolling(false);},1500)     
+//     if (touchendY < touchstartY) {
+//       scrollUp()
 
-  }
-}
+//     }
+//     if (touchendY > touchstartY) {
+//       scrollDown()
+//     }
+//     setTimeout(()=>{setScrolling(false);},1500)     
+
+//   }
+// }
 
 
 window.onwheel = function(event) {
