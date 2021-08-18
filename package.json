@@ -24,6 +24,8 @@
     "body-parser": "^1.19.0",
     "concurrently": "^6.2.0",
     "cors": "^2.8.5",
+    "devextreme": "21.1.5",
+    "devextreme-react": "21.1.5",
     "express": "^4.17.1",
     "nodemon": "^2.0.12"
   }

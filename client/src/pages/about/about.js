@@ -47,7 +47,7 @@ const scrollUp = () => {
 // // let touchendX = 0;
 // let touchendY = 0;
 
-// // let gesuredZone = document.getElementById('About');
+// let gesuredZone = document.getElementById('About');
 
 // window.addEventListener('touchstart', function(event) {
 //     // touchstartX = event.changedTouches[0].screenX;
@@ -59,30 +59,42 @@ const scrollUp = () => {
 //     touchendY = event.changedTouches[0].screenY;
 //     handleGesure();
 // }, false); 
+let y1 =0;
+let y2=0;
 
-// function handleGesure() {
-//     // if (touchendX < touchstartX) {
-//     //     alert(swiped + 'left!');
-//     // }
-//     // if (touchendX > touchstartX) {
-//     //     alert(swiped + 'right!');
-//     // }
-//     if(!scrolling){
-//       setScrolling(true);  
-//       console.log('touchendY', touchendY);
-//       console.log('touchstartY', touchstartY);
+window.addEventListener('touchmove', function(event) {
+    // touchendX = event.changedTouches[0].screenX;
+    y1 = event.changedTouches[0].screenY;
+    setTimeout(() => {
+      y2 = event.changedTouches[0].screenY;
+      handleGesure();
 
-//     if (touchendY < touchstartY) {
-//       scrollUp()
+    }, 4); 
+}, false); 
 
-//     }
-//     if (touchendY > touchstartY) {
-//       scrollDown()
-//     }
-//     setTimeout(()=>{setScrolling(false);},1500)     
+function handleGesure() {
+    // if (touchendX < touchstartX) {
+    //     alert(swiped + 'left!');
+    // }
+    // if (touchendX > touchstartX) {
+    //     alert(swiped + 'right!');
+    // }
+    if(!scrolling){
+      setScrolling(true);  
+      console.log('y2', y2);
+      console.log('y1', y1);
 
-//   }
-// }
+    if (y2 < y1) {
+      scrollDown()
+
+    }
+    if (y2 > y1) {
+      scrollUp()
+    }
+    setTimeout(()=>{setScrolling(false);},1500)     
+
+  }
+}
 
 
 window.onwheel = function(event) {
