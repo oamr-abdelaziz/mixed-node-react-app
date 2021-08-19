@@ -196,7 +196,7 @@ window.onwheel = function(event) {
 // } 
   return (
     <>
-      <div id='About'  className="about">
+      <div id='About' onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} className="about">
         <div id="page1" className="about-page">
           <div id="leftPage1" className="leftPage about-image-div">
             <img
