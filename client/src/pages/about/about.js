@@ -8,18 +8,18 @@ function About(props) {
   // const [buttonClickedFlag, setButtonClickedFlag] = useState(false);
 
   let buttonClickedFlag = false;
-  useEffect(() => {
-    // document.getElementById('About').onscroll = ()=>{scrollDown(2);}
-    let about = document.getElementById('About');
-    about && about.addEventListener('touchstart', handleTouchStart, false);
+//   useEffect(() => {
+//     // document.getElementById('About').onscroll = ()=>{scrollDown(2);}
+//     let about = document.getElementById('About');
+//     about && about.addEventListener('touchstart', handleTouchStart, false);
   
-    about && about.addEventListener('touchend',handleTouchEnd, false); 
+//     about && about.addEventListener('touchend',handleTouchEnd, false); 
   
-  return () => {
-    about && about.removeEventListener('touchend')
-    about && about.removeEventListener('touchstart')
-  };
-}, [])
+//   return () => {
+//     about && about.removeEventListener('touchend')
+//     about && about.removeEventListener('touchstart')
+//   };
+// }, [])
 
 
 
@@ -226,7 +226,7 @@ window.onwheel = function(event) {
 // } 
   return (
     <>
-      <div id='About' className="about">
+      <div id='About' onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} className="about">
         <div id="page1" className="about-page">
           <div id="leftPage1" className="leftPage about-image-div">
             <img
