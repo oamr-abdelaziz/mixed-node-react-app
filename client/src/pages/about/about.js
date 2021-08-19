@@ -10,13 +10,14 @@ function About(props) {
   let buttonClickedFlag = false;
   useEffect(() => {
     // document.getElementById('About').onscroll = ()=>{scrollDown(2);}
-    window && window.addEventListener('touchstart', handleTouchStart, false);
+    let about = document.getElementById('About');
+    about && about.addEventListener('touchstart', handleTouchStart, false);
   
-    window && window.addEventListener('touchend',handleTouchEnd, false); 
+    about && about.addEventListener('touchend',handleTouchEnd, false); 
   
   return () => {
-    window && window.removeEventListener('touchend')
-    window && window.removeEventListener('touchstart')
+    about && about.removeEventListener('touchend')
+    about && about.removeEventListener('touchstart')
   };
 }, [])
 
