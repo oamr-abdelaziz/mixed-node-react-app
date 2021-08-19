@@ -52,20 +52,7 @@ const handleTouchEnd =(event)=>{
 
 
   const scrollDown = (touched) => {
-    if(touched){
-      if(currentPage<8){
-        let currPage = document.getElementById(`page${currentPage}`);
-        // let lftPage = document.getElementById(`leftPage${currentPage}`);
-        let page = document.getElementsByClassName(`page${currentPage}`)[0];
-
-        // lftPage.classList.toggle('fastfixedDown');
-        page.classList.toggle('slowfixedDown');
-        currPage.classList.toggle('fixedDown')
-
-        setCurrentPage(currentPage+1);
-      }
-    }
-    else{
+   
       if(currentPage<8){
         let currPage = document.getElementById(`page${currentPage}`);
         let lftPage = document.getElementById(`leftPage${currentPage}`);
@@ -77,32 +64,12 @@ const handleTouchEnd =(event)=>{
 
         setCurrentPage(currentPage+1);
       }
-    }
+    
     
 };
 
 const scrollUp = (touched) => {
-  if(touched){
-    if(currentPage>1){
-      // let currPage = document.getElementById(`page${currentPage}`);
-      // // let lftPage = document.getElementById(`leftPage${currentPage}`);
-      // let page = document.getElementsByClassName(`page${currentPage}`);
-
-    let currPage = document.getElementById(`page${currentPage-1}`);
-    let page = document.getElementsByClassName(`page$${currentPage-1}`)[0];
-    // let rightPage = document.getElementById(`rightPage${currentPage-1}`);
-
-    page.classList.toggle('slowfixedDown');
-
-    // rightPage.classList.toggle('slowfixedDown');
-    currPage.classList.toggle('fixedDown');
-    
-   
-    setCurrentPage(currentPage-1);
-    }
-  }
-  else{
-
+ 
     if(currentPage>1){
       let currPage = document.getElementById(`page${currentPage-1}`);
       let lftPage = document.getElementById(`leftPage${currentPage-1}`);
@@ -115,7 +82,7 @@ const scrollUp = (touched) => {
      
       setCurrentPage(currentPage-1);
       }
-  }
+  
 };
 
 
