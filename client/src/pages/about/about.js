@@ -51,7 +51,21 @@ const handleTouchEnd =(event)=>{
 }
 
 
-  const scrollDown = () => {
+  const scrollDown = (touched) => {
+    if(touched){
+      if(currentPage<8){
+        let currPage = document.getElementById(`page${currentPage}`);
+        // let lftPage = document.getElementById(`leftPage${currentPage}`);
+        let page = document.getElementsByClassName(`page${currentPage}`)[0];
+
+        // lftPage.classList.toggle('fastfixedDown');
+        page.classList.toggle('slowfixedDown');
+        currPage.classList.toggle('fixedDown')
+
+        setCurrentPage(currentPage+1);
+      }
+    }
+    else{
       if(currentPage<8){
         let currPage = document.getElementById(`page${currentPage}`);
         let lftPage = document.getElementById(`leftPage${currentPage}`);
@@ -63,21 +77,45 @@ const handleTouchEnd =(event)=>{
 
         setCurrentPage(currentPage+1);
       }
+    }
+    
 };
 
-const scrollUp = () => {
+const scrollUp = (touched) => {
+  if(touched){
     if(currentPage>1){
-    let currPage = document.getElementById(`page${currentPage-1}`);
-    let lftPage = document.getElementById(`leftPage${currentPage-1}`);
-    let rightPage = document.getElementById(`rightPage${currentPage-1}`);
+      // let currPage = document.getElementById(`page${currentPage}`);
+      // // let lftPage = document.getElementById(`leftPage${currentPage}`);
+      // let page = document.getElementsByClassName(`page${currentPage}`);
 
-    lftPage.classList.toggle('fastfixedDown');
-    rightPage.classList.toggle('slowfixedDown');
+    let currPage = document.getElementById(`page${currentPage-1}`);
+    let page = document.getElementsByClassName(`page$${currentPage-1}`)[0];
+    // let rightPage = document.getElementById(`rightPage${currentPage-1}`);
+
+    page.classList.toggle('slowfixedDown');
+
+    // rightPage.classList.toggle('slowfixedDown');
     currPage.classList.toggle('fixedDown');
     
    
     setCurrentPage(currentPage-1);
     }
+  }
+  else{
+
+    if(currentPage>1){
+      let currPage = document.getElementById(`page${currentPage-1}`);
+      let lftPage = document.getElementById(`leftPage${currentPage-1}`);
+      let rightPage = document.getElementById(`rightPage${currentPage-1}`);
+  
+      lftPage.classList.toggle('fastfixedDown');
+      rightPage.classList.toggle('slowfixedDown');
+      currPage.classList.toggle('fixedDown');
+      
+     
+      setCurrentPage(currentPage-1);
+      }
+  }
 };
 
 
@@ -146,12 +184,12 @@ function handleGesure(e) {
 
     if (touchendY > touchstartY) {
       e.preventDefault();
-      scrollUp()
+      scrollUp(1)
 
     }
     else if (touchendY < touchstartY) {
       e.preventDefault();
-      scrollDown()
+      scrollDown(1)
     }
     else{
       console.log('click event');
@@ -197,7 +235,7 @@ window.onwheel = function(event) {
               alt="The Fishfinger Team"
             />
           </div>
-          <div id='rightPage1' className=" rightPage about-text-div">
+          <div id='rightPage1' className="page1 rightPage about-text-div">
           <div className='mobileSizeImage'>
                       <img width="50%"  src="./assets/meet-the-team.png" alt="The Fishfinger Team"/>
 
@@ -224,7 +262,7 @@ window.onwheel = function(event) {
           <div
           id='rightPage2'
             style={{ backgroundColor: "#01519B" }}
-            className="rightPage about-text-div"
+            className="page2 rightPage about-text-div"
           >
             <div className='mobileSizeImage'>
                  <img width="55%"  src="./assets/meet-the-team-fallback.gif" alt="The Fishfinger Team"/>

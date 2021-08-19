@@ -18,7 +18,7 @@ function Employee(props) {
                     <img width="70%"  src={`./assets/${props.img}`} alt="The Fishfinger Team"/>
                 </div>}
 
-                <div id={props.imgleft?`rightPage${props.pageNumber}`:`leftPage${props.pageNumber}`} style={{backgroundColor:props.backgroundColorTxt}} className={` about-text-div ${props.imgleft?'rightPage':'leftPage'}`}>
+                <div id={props.imgleft?`rightPage${props.pageNumber}`:`leftPage${props.pageNumber}`} style={{backgroundColor:props.backgroundColorTxt}} className={`page${props.pageNumber} about-text-div ${props.imgleft?'rightPage':'leftPage'}`}>
                         <div className='employee'>
                             <div className='mobileSizeImage'>
                                     <img width="50%"  src={`./assets/${props.img}`} alt="The Fishfinger Team"/>
