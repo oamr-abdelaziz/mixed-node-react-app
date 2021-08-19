@@ -39,6 +39,7 @@ const handleTouchStart =(event)=>{
 }
 
 const handleTouchEnd =(event)=>{
+  console.log(buttonClickedFlag);
   if(buttonClickedFlag){
     // setButtonClickedFlag(false);
     buttonClickedFlag = false;
@@ -51,7 +52,7 @@ const handleTouchEnd =(event)=>{
 }
 
 
-  const scrollDown = (touched) => {
+  const scrollDown = () => {
    
       if(currentPage<8){
         let currPage = document.getElementById(`page${currentPage}`);
@@ -68,7 +69,7 @@ const handleTouchEnd =(event)=>{
     
 };
 
-const scrollUp = (touched) => {
+const scrollUp = () => {
  
     if(currentPage>1){
       let currPage = document.getElementById(`page${currentPage-1}`);
@@ -151,17 +152,19 @@ function handleGesure(e) {
 
     if (touchendY > touchstartY) {
       e.preventDefault();
-      scrollUp(1)
+      scrollUp();
 
     }
     else if (touchendY < touchstartY) {
       e.preventDefault();
-      scrollDown(1)
+      scrollDown();
     }
     else{
       console.log('click event');
     }
-    setTimeout(()=>{setScrolling(false);},1500)     
+    setTimeout(()=>{
+      setScrolling(false);
+    },500)     
 
   }
 }
