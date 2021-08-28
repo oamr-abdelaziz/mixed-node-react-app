@@ -53,7 +53,7 @@ const handleTouchEnd =(event)=>{
 
 
   const scrollDown = () => {
-   
+      
       if(currentPage<8){
         let currPage = document.getElementById(`page${currentPage}`);
         let lftPage = document.getElementById(`leftPage${currentPage}`);
@@ -177,7 +177,7 @@ window.onwheel = function(event) {
 
     if (event.deltaY > 0) {
       // down
-      scrollDown()
+      scrollDown();
     } else {
       // up
      scrollUp()
@@ -259,7 +259,6 @@ window.onwheel = function(event) {
           </div>
         </div>
         <Employee
-
           img="le-chef-fallback.gif"
           imgright={true}
           imgleft={false}

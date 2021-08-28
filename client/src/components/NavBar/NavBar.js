@@ -18,7 +18,18 @@ import {
 function NavBar(props) {
   // const [state, setState] = useState('');
   const [isOpen, setIsOpen] = useState(false);
- 
+  window.onscroll = function () {
+    var moveLogo = document.getElementById("fishfingerLogo");
+
+    if (window.pageYOffset > 190) {
+      moveLogo.classList.add("moveLogo");
+
+    } else {
+      moveLogo.classList.remove("moveLogo");
+
+
+    }
+  }
   // const openNav = () => {
   //   document.getElementById("myNav").classList.add("open");
   //   document.getElementById("myNav").classList.remove("close");
@@ -50,6 +61,14 @@ function NavBar(props) {
 
   }
 
+  const showServices = ()=> {
+    let mainMenu = document.getElementById('contentOverlay');
+    mainMenu.setAttribute('style','display:none')
+      let services = document.getElementsByClassName('services')[0];
+      services.setAttribute('style','display:block')
+
+  }
+
   useEffect(() => {
     return () => {};
   }, []);
@@ -75,11 +94,22 @@ function NavBar(props) {
               <a href="/about">About
               {/* <img width='5%' src="./assets/wave-gif-repet.gif" alt=''/><img width='5%' src="./assets/wave-gif-repet.gif" alt=''/> */}
               </a>
-              <a href="#">Services</a>
+              <a onClick={showServices} href='#'>Services</a>
               <a href="#">Clients</a>
               <a href="#">Contact</a>
             </div>
+            <div id="contentOverlay" className="overlay-content services" style={{display:'none'}}>
+              <a href="/graphic-design">Graphic Design
+              {/* <img width='5%' src="./assets/wave-gif-repet.gif" alt=''/><img width='5%' src="./assets/wave-gif-repet.gif" alt=''/> */}
+              </a>
+              <a href= 'motion-design'>Motion</a>
+              <a href="web-design">Web</a>
+              <a href="social-design">Social</a>
+              <a href="#">{"<----"}</a>
+
+            </div>
           </div>
+          
           <a href='#' className='nav__trigger' onClick={toggle}>
             <span
             style={{ "fontSize": "30px", cursor: "pointer", color: "white",zIndex:"2" }}

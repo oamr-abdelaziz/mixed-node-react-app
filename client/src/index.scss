@@ -9,6 +9,8 @@ html{
 body {
   margin: 0;
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
   // overflow-y: hidden;
   /* font-family: TT-Norm, serif; */
 
@@ -63,4 +65,9 @@ body {
 @font-face {
   font-family: 'TT-Norm-Italic';
   src: local('TT-Norm'), url(./fonts/TTNorms/TTNorms-Italic.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'TT-Norm-medium';
+  src: local('TT-Norm'), url(./fonts/TTNorms/TTNorms-Medium.otf) format('truetype');
 }

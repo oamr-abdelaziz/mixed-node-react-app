@@ -4,10 +4,14 @@ import Spinner from "./components/Spinner/Spinner";
 
 const Home = React.lazy(() => import("./pages/home/home"));
 const About = React.lazy(() => import("./pages/about/about"));
+const GraphicDesign = React.lazy(() => import("./pages/services/graphic-design/graphicDesign"));
+const MotionDesign = React.lazy(() => import("./pages/services/motion/motion"));
+const WebDesign = React.lazy(() => import("./pages/services/web/WebDesign"));
+const SocialDesign = React.lazy(() => import("./pages/services/social/Social"));
+
 
 // const About = React.lazy(() => import("./pages/About/About"));
 // const Contact = React.lazy(() => import("./pages/Contact/Contact"));
-
 // const Portofolio = React.lazy(() => import("./pages/portofolio-page/Portofolio"));
 // const Project = React.lazy(() => import("./components/Project/Project"));
 
@@ -21,6 +25,11 @@ export default function Routes() {
         {/* Main Routes*/}
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About}/>
+        <Route path="/graphic-design" exact component={GraphicDesign}/>
+        <Route path="/motion-design" exact component={MotionDesign}/>
+        <Route path="/web-design" exact component={WebDesign}/>
+        <Route path="/social-design" exact component={SocialDesign}/>
+
         {/* <Route path="/portofolio" exact component={Portofolio}/>
         <Route path="/about" exact component={About}/>
         <Route path="/contact" exact component={Contact}/> */}
