@@ -9,7 +9,7 @@ function CatsAndDogs(props) {
             colorWhite='false'
             title='Cats &amp; Dogs - The Weather App'
             paragraph='Mobile App Designs &amp; Development'
-            projectPage='cats-dogs'
+            projectPage='/work/catsAndDogs'
             />
     )
 }
@@ -23,7 +23,7 @@ function Experiments(props){
         colorWhite='true'
         title='The Insurance Experiments'
         paragraph=' Web Design &amp; Illustration'
-        projectPage='experiments'
+        projectPage='/work/experiments'
         />
     )
 }
@@ -36,7 +36,7 @@ function XoCola (props){
         colorWhite='false'
         title='Xocola Chocolate'
         paragraph='Brand Identity &amp; Packaging'
-        projectPage='xocola'
+        projectPage='/work/xocola'
         />
     )
 }
@@ -50,7 +50,7 @@ function Bellevee(props){
         colorWhite='true'
         title='The Bellevue Residences'
         paragraph='Brand Identity & Print'
-        projectPage='bellevee'
+        projectPage='/work/bellevee'
         />
         )
 }
@@ -64,7 +64,7 @@ function SourceResponsibly(props){
         colorWhite='false'
         title='WWF Source Responsibly'
         paragraph='Animation & Illustration'
-        projectPage='source-responsibly'
+        projectPage='/work/source-responsibly'
         />
         )
 }
@@ -78,7 +78,7 @@ function Comico(props){
         colorWhite='true'
         title='Bradford Comico'
         paragraph='Brand Identity and Print'
-        projectPage='comico'
+        projectPage='/work/comico'
         />
         )
 }
@@ -91,7 +91,7 @@ function ListingWide(props){
         colorWhite='false'
         title='Element'
         paragraph='Web Design & Animation'
-        projectPage='listing-wide'
+        projectPage='/work/listing-wide'
         />
     )
 }
@@ -104,7 +104,7 @@ function TeaCircle(props){
         colorWhite='true'
         title='The Tea Circle'
         paragraph='Web Design & Packaging'
-        projectPage='tea-circle'
+        projectPage='/work/tea-circle'
         
 />
     )
@@ -119,11 +119,67 @@ function StarWars(props){
         colorWhite='true'
         title='Adidas x Star Wars'
         paragraph='T-Shirt & Clothing Design'
-        projectPage='star-wars'
+        projectPage='/work/star-wars'
         />
     )
 }
 
+function Illusive(props){
+    return( 
+    <Project
+        img='illusive-cover-small-work.png'
+        backgroundColor='#000000'
+        colorWhite='true'
+        title='Illusive Typeface'
+        paragraph='Typography'
+        projectPage='/work/illusive-typeface'
+        />
+    )
+}
+
+function Interhigh(props){
+    return( 
+    <Project
+        img='interhigh-waterloo-motion-logo-cover-small-web.jpg'
+        backgroundColor='#2F0167'
+        colorWhite='true'
+        title='Interhigh Campaign'
+        paragraph='Advertising & Animation'
+        projectPage='/work/interhigh'
+        />
+    )
+}
+
+
+function Redbull(props){
+    return( 
+    <Project
+        img='red-bull-logo-graphics-skateboard-work.png'
+        backgroundColor='#A30A30'
+        colorWhite='true'
+        title='Red Bull Skate Arcade'
+        paragraph='Illustration and Iconography'
+        projectPage='/work/redbull'
+        />
+    )
+}
+
+let Projects = {
+    0:CatsAndDogs,
+    1:Experiments,
+    2:XoCola,
+    3:Bellevee,
+    4:SourceResponsibly,
+    5:Comico,
+    6:ListingWide,
+    7:TeaCircle,
+    8:StarWars,
+    9:Illusive,
+    10:Interhigh,
+    11:Redbull
+};
+
+export {Projects};
 export {
     CatsAndDogs,
     Experiments,
@@ -133,5 +189,8 @@ export {
     Comico,
     ListingWide,
     TeaCircle,
-    StarWars
+    StarWars,
+    Illusive,
+    Interhigh,
+    Redbull
 };

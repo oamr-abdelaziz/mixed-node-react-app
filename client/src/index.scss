@@ -71,3 +71,13 @@ body {
   font-family: 'TT-Norm-medium';
   src: local('TT-Norm'), url(./fonts/TTNorms/TTNorms-Medium.otf) format('truetype');
 }
+
+@font-face {
+  font-family: 'TT-Norm-ExtraBold';
+  src: local('TT-Norm'), url(./fonts/TTNorms/TTNorms-ExtraBold.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'TT-Norm-Regular';
+  src: local('TT-Norm'), url(./fonts/TTNorms/TTNorms-Regular.otf) format('truetype');
+}

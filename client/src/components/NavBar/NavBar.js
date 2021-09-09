@@ -95,7 +95,7 @@ function NavBar(props) {
               {/* <img width='5%' src="./assets/wave-gif-repet.gif" alt=''/><img width='5%' src="./assets/wave-gif-repet.gif" alt=''/> */}
               </a>
               <a onClick={showServices} href='#'>Services</a>
-              <a href="#">Clients</a>
+              <a href="/work">Work</a>
               <a href="#">Contact</a>
             </div>
             <div id="contentOverlay" className="overlay-content services" style={{display:'none'}}>

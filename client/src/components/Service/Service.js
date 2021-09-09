@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row, Container } from "reactstrap";
 import Footer from "../../components/Footer/Footer";
+import MainFooter from "../Main-Footer/MainFooter";
 import "./Service.scss";
 
 function Service(props) {
@@ -379,7 +380,16 @@ function Service(props) {
       <div id="service-page3" style={{ backgroundColor: backgroundColor }}>
         <h3>Check out some of our {checkMsg}</h3>
       </div>
-      <div id="service-page4">
+
+        <MainFooter
+                  Project1={Project1} 
+                  Project2={Project2} 
+                  Project3={Project3} 
+                  Project4={Project4} 
+                  Project5={Project5} 
+                  Project6={Project6} 
+                  />
+      {/* <div id="service-page4">
         <Container fluid={true}>
           <Row>
             <Col md="6" lg="4" className="main-div-grid">
@@ -406,13 +416,14 @@ function Service(props) {
             </Col>
           </Row>
         </Container>
+    
       </div>
       <div id="service-page5">
         <h2>
           Tell us about your new project!{" "}
           <i className="cta-arrow fas fa-long-arrow-alt-right"></i>
         </h2>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );

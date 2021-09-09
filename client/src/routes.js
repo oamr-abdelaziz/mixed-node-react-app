@@ -1,6 +1,9 @@
 import React, { Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
 import Spinner from "./components/Spinner/Spinner";
+import ComicoProject from "./pages/project-page/Comico/Comico";
+import XocolaProject from "./pages/project-page/Xocola/Xocola";
+import Work from "./pages/work/Work";
 
 const Home = React.lazy(() => import("./pages/home/home"));
 const About = React.lazy(() => import("./pages/about/about"));
@@ -8,6 +11,7 @@ const GraphicDesign = React.lazy(() => import("./pages/services/graphic-design/g
 const MotionDesign = React.lazy(() => import("./pages/services/motion/motion"));
 const WebDesign = React.lazy(() => import("./pages/services/web/WebDesign"));
 const SocialDesign = React.lazy(() => import("./pages/services/social/Social"));
+const ProjectDetails = React.lazy(() => import("./components/project-details/projectDetails"));
 
 
 // const About = React.lazy(() => import("./pages/About/About"));
@@ -29,7 +33,15 @@ export default function Routes() {
         <Route path="/motion-design" exact component={MotionDesign}/>
         <Route path="/web-design" exact component={WebDesign}/>
         <Route path="/social-design" exact component={SocialDesign}/>
+         {/* <Route path="/xocola" exact component={XocolaProject}/> 
+         <Route path="/comico" exact component={ComicoProject}/> */}
+         <Route path="/work" exact component={Work}/>
+         <Route path="/work/:name" exact component={ProjectDetails}/>
 
+
+        {/* <Route path="/work/:name" exact component={XocolaProject}/> */}
+        {/* <Route path="/work/:comico" exact component={ComicoProject}/> */}
+        
         {/* <Route path="/portofolio" exact component={Portofolio}/>
         <Route path="/about" exact component={About}/>
         <Route path="/contact" exact component={Contact}/> */}

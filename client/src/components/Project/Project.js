@@ -8,7 +8,7 @@ function Project(props) {
   }, []);
 
   return (
-    <a href={`/${projectPage}`}>
+    <a href={`${projectPage}`}>
       <img src={`./assets/${img}`} alt={`${img}`} />
       <i
         className={`fas fa-caret-right ${
