@@ -12,6 +12,7 @@ const MotionDesign = React.lazy(() => import("./pages/services/motion/motion"));
 const WebDesign = React.lazy(() => import("./pages/services/web/WebDesign"));
 const SocialDesign = React.lazy(() => import("./pages/services/social/Social"));
 const ProjectDetails = React.lazy(() => import("./components/project-details/projectDetails"));
+const ContactUs = React.lazy(() => import("./pages/contact/Contact"));
 
 
 // const About = React.lazy(() => import("./pages/About/About"));
@@ -37,6 +38,7 @@ export default function Routes() {
          <Route path="/comico" exact component={ComicoProject}/> */}
          <Route path="/work" exact component={Work}/>
          <Route path="/work/:name" exact component={ProjectDetails}/>
+         <Route path="/contact-us" exact component={ContactUs}/>
 
 
         {/* <Route path="/work/:name" exact component={XocolaProject}/> */}

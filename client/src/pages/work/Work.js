@@ -71,7 +71,7 @@ function Work(props) {
             </Col>
           </Row>
         </Container></div>
-        <div id="footer-1">
+        <div id="footer-1" style={{height:'50%'}}>
         <Container fluid={true}>
           <Row>
             <Col md="6" lg="4" className="main-div-grid">

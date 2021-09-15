@@ -96,7 +96,7 @@ function NavBar(props) {
               </a>
               <a onClick={showServices} href='#'>Services</a>
               <a href="/work">Work</a>
-              <a href="#">Contact</a>
+              <a href="/contact-us">Contact</a>
             </div>
             <div id="contentOverlay" className="overlay-content services" style={{display:'none'}}>
               <a href="/graphic-design">Graphic Design
@@ -110,7 +110,7 @@ function NavBar(props) {
             </div>
           </div>
           
-          <a href='#' className='nav__trigger' onClick={toggle}>
+          <a  className='nav__trigger' onClick={toggle}>
             <span
             style={{ "fontSize": "30px", cursor: "pointer", color: "white",zIndex:"2" }}
             className='nav__icon'
